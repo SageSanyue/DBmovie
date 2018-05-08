@@ -1,9 +1,3 @@
-
-/*$('footer > div').on('click',function(){
-    $(this).addClass('active').siblings().removeClass('active')
-    var index = $(this).index()
-    $('main section').eq(index).fadeIn().siblings().fadeOut()
-})*/
 var Paging = {
     init : function(){
         this.$tabs = $('footer > div')
@@ -91,7 +85,7 @@ var Top250 = {
         this.isLoading = true
         this.$container.find('.loading').show(400)
         $.ajax({
-            url : 'http://api.douban.com/v2/movie/top250',
+            url : 'https://api.douban.com/v2/movie/top250',
             data : {
                 start : this.count * this.page,
                 count : this.count
@@ -123,7 +117,7 @@ var UsBoard = {
     },
     getData : function(callback){
         $.ajax({
-            url : 'http://api.douban.com/v2/movie/us_box',
+            url : 'https://api.douban.com/v2/movie/us_box',
             data : {
                 start : 0,
                 count : 10
@@ -188,7 +182,7 @@ var Search = {
         var keyword = this.$container.find('.search-area input').val()
         this.isLoading = true
         $.ajax({
-            url : 'http://api.douban.com/v2/movie/search',
+            url : 'https://api.douban.com/v2/movie/search',
             data : {
                 q : keyword
             },
